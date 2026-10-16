@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PlanGuard AI</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>PlanGuard AI</h1>
+
+        <p>Intelligent Plan Analysis and Risk Prevention</p>
+
+        <form method="POST">
+            <textarea name="plan"
+                      placeholder="Describe your plan..."
+                      required></textarea>
+
+            <button type="submit">Analyze My Plan</button>
+        </form>
+
+        {% if report %}
+            <h2>Your Plan Analysis</h2>
+            <pre>{{ report }}</pre>
+        {% endif %}
+    </div>
+</body>
+</html>
